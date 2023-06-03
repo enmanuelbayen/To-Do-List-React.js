@@ -1,11 +1,11 @@
 
 import TodoItem from './TodoItem.jsx';
 
-const TodosList = ({ todosProps }) => {
+const TodosList = ({ todosProps, setTodos }) => {
   return (
     <ul>
       {todosProps.map((todo) => (
-        <TodoItem itemProp={todo} />
+        <TodoItem key={todo.id} itemProp={todo} setTodos={setTodos} />
       ))}
     </ul>
   );

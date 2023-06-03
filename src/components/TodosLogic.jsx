@@ -1,8 +1,9 @@
-import InputTodo from "./InputTodo.jsx";
+import { useState } from "react";
+import InputTodo from "./InputTodo.jsx"
 import TodosList from "./TodosList.jsx"
 
 const TodosLogic = () => {
-    const todos = [
+    const [todos, setTodos] = useState([
         {
           id: 1,
           title: 'Setup development environment',
@@ -18,12 +19,12 @@ const TodosLogic = () => {
           title: 'Deploy to live server',
           completed: false,
         },
-      ];
+      ]);
 
     return (
         <div>
             <InputTodo />
-            <TodosList todosProps={todos} />
+            <TodosList todosProps={todos} setTodos={setTodos} />
         </div>
     )
   }
