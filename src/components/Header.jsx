@@ -1,8 +1,9 @@
 import Navbar from "./Navbar";
+import '../style/header.css';
 
 const Header = () => {
     return (
-      <header>
+      <header className="header">
         <Navbar />
         <h1>todos</h1>
       </header>

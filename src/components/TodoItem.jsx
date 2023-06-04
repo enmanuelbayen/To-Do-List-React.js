@@ -1,3 +1,4 @@
+import '../style/todoItem.css';
 
 const TodoItem = ({ itemProp, setTodos, delTodo }) => {
 
@@ -16,13 +17,17 @@ const TodoItem = ({ itemProp, setTodos, delTodo }) => {
       };
 
     return (
-        <li>
-          <input type="checkbox" 
-           checked={itemProp.completed}
-           onChange={() => handleChange(itemProp.id)}
-           />
-          {itemProp.title}
-          <button onClick={() => delTodo(itemProp.id)}>Delete</button>
+        <li className='item'>
+            <div className="content">
+                <input type="checkbox" 
+                    checked={itemProp.completed}
+                    onChange={() => handleChange(itemProp.id)}
+                />
+                <span className={itemProp.completed ? 'itemText' : null}>
+                {itemProp.title}
+                </span>
+                <button onClick={() => delTodo(itemProp.id)}>Delete</button>
+          </div>
         </li>
     );
 };
