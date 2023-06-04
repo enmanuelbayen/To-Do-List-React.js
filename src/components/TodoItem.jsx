@@ -2,6 +2,8 @@ import '../style/todoItem.css';
 import { useState, useRef } from 'react';
 import { FaTrash } from "react-icons/fa";
 import { AiFillEdit } from "react-icons/ai";
+import PropTypes from 'prop-types';
+
 
 
 const TodoItem = ({ itemProp, setTodos, delTodo, setUpdate }) => {
@@ -65,6 +67,19 @@ const TodoItem = ({ itemProp, setTodos, delTodo, setUpdate }) => {
         </li>
     );
 };
+
+TodoItem.propTypes = {
+  itemProp: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    completed: PropTypes.bool.isRequired,
+  }).isRequired,
+  setTodos: PropTypes.func.isRequired,
+  delTodo: PropTypes.func.isRequired,
+  setUpdate: PropTypes.func.isRequired,
+};
+
+
 export default TodoItem;
   
   

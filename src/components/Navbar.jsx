@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useOnClickOutside } from "../useOnClickOutside";
 import '../style/navbar.css';
 import { MdClose } from 'react-icons/md';
