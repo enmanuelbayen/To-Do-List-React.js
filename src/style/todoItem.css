@@ -35,3 +35,14 @@
     text-decoration: line-through;
   }
   
+  .textInput {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dfdfdf;
+    outline: none;
+  }
+
+  button svg {
+    color: #5e5e5e; 
+    font-size: 16px;
+  }
