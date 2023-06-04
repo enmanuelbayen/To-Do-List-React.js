@@ -1,5 +1,5 @@
 
-const TodoItem = ({ itemProp, setTodos }) => {
+const TodoItem = ({ itemProp, setTodos, delTodo }) => {
 
     const handleChange = (id) => {
         setTodos((prevState) =>
@@ -22,6 +22,7 @@ const TodoItem = ({ itemProp, setTodos }) => {
            onChange={() => handleChange(itemProp.id)}
            />
           {itemProp.title}
+          <button onClick={() => delTodo(itemProp.id)}>Delete</button>
         </li>
     );
 };

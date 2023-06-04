@@ -21,10 +21,31 @@ const TodosLogic = () => {
         },
       ]);
 
+      const delTodo = (id) => {
+        setTodos([
+            ...todos.filter((todo) => {
+              return todo.id !== id;
+            }),
+          ]);
+      };
+
+      const addTodoItem = (title) => {
+        const newTodo = {
+            id: 4,
+            title: title,
+            completed: false,
+          };
+          setTodos([...todos, newTodo]);
+      };
+
     return (
         <div>
-            <InputTodo />
-            <TodosList todosProps={todos} setTodos={setTodos} />
+            <InputTodo addTodoItem={addTodoItem} />
+            <TodosList 
+                todosProps={todos} 
+                setTodos={setTodos}
+                delTodo={delTodo} 
+            />
         </div>
     )
   }
